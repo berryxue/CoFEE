@@ -1,24 +1,19 @@
 # Coarse-to-Fine Pre-training for Named Entity Recognition
 ====
 
-Models and results can be found at our IJCAI 2019 paper [Coarse-to-Fine Pre-training for Named Entity Recognition](https://www.aclweb.org/anthology/2020.emnlp-main.514.pdf). It achieves the state-of-the-art result on NER task.
+Models and results can be found at our EMNLP 2020 paper [Coarse-to-Fine Pre-training for Named Entity Recognition](https://www.aclweb.org/anthology/2020.emnlp-main.514.pdf). It achieves the state-of-the-art result on three benchmarks of NER task.
 
 Details will be updated soon.
 
 Requirement:
 ======
-	Python: 3.6.3
-	PyTorch: 0.3.1 
+	Python: 3.8.5
+	PyTorch: 1.6.0
 
-Input format:
+Data preporation:
 ======
-We transform the original data into pkl format, if you want the tranform code, please concat me.
+***Step 1: Query Generation***
 
-pkl data location:
-======
-link:https://pan.baidu.com/s/17tHxyLAMqdOTozmnQsMQ6w 
-
-Fetch Code:kwvn 
 
 How to run the code?
 ====
