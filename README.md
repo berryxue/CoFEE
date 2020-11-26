@@ -17,7 +17,7 @@ Data preporation:
 
 You can donwload the data for ESI used in our paper from [HERE](https://drive.google.com/drive/folders/1qE-4P0SH8qHamPHwmlX2z_0cZQnc1bXd?usp=sharing)
 
-If you wanna to generate your own data, please run ""
+If you wanna to generate your own data, please run "data_preprocess/write_tag.py"
 
 ***Data for NEE***
 
