@@ -23,7 +23,7 @@ If you wanna to generate your own data, please run "data_preprocess/write_tag.py
 
 You can donwload the data for NEE used in our paper from [HERE](https://drive.google.com/drive/folders/1-2dPlo1iLhKWHzdicS01RxEaipSQwgia?usp=sharing)
 
-Gazetteers used in our data can be downloaded from [HERE](https://drive.google.com/drive/folders/1COlXFWFIWrN8nHeE7HUHdso5m5IK3T33?usp=sharing)
+Gazetteers used in our paper can be downloaded from [HERE](https://drive.google.com/drive/folders/1COlXFWFIWrN8nHeE7HUHdso5m5IK3T33?usp=sharing)
 
 If you wanna to generate your own data, please run "data_preprocess/write_tag_from_dict.py"
 
@@ -38,20 +38,45 @@ Run `./data_preprocess/example/generate_data.py` to generate MRC-style data.
 How to run the code?
 ====
 
+***Stage1: ESI***
+
+python -u run/train_bert_mrc.py --data_dir data/train_for_ESI/zhwiki/ --checkpoint 20000 --learning_rate 6e-6 --num_train_epochs 5 --output_dir data/saved_model/zhwiki/morethan3/5-6e-6 --data_sign zhwiki
+
+***Stage2: NEE***
+
+python -u run/train_bert_mrc.py --data_dir data/train_for_ESI/ecommerce/ --checkpoint 4000 --learning_rate 3e-5 --num_train_epochs 6 --output_dir data/saved_model/ecommerce/3e-5-6-regenerate0.1-perepoch0-warmup0.4 --data_sign ecommerce --pretrain data/saved_model/zhwiki/morethan3/5-6e-6 --bert_model data/bert_model/bert-base-chinese-pytorch/ --warmup_proportion 0.4 --regenerate_rate 0.1 --STrain 1 --perepoch 0
+
+***Stage3: FET***
+
+python -u run/train_cluster_bert_mrc.py --data_dir data/train_for_ESI/ecommerce/pretrain/ --checkpoint 2000 --learning_rate 2e-5 --num_train_epochs 5 --output_dir data/saved_model/ecommerce/cluster/2e-5-5-23-0.001-sumpool-drop0.1-60 --data_sign ecommerce --pretrain data/saved_model/ecommerce/pretrain/ --bert_model data/bert_model/bert-base-chinese-pytorch/ --num_clusters 23 --gama 0.001 --clus_niter 60 --dropout_rate 0.1 
+
+***Stage4: fine-tune***
+
 
 
 Cite: 
 ========
 
 @inproceedings{mengge-etal-2020-coarse,
+
     title = "{C}oarse-to-{F}ine {P}re-training for {N}amed {E}ntity {R}ecognition",
+    
     author = "Mengge, Xue  and
+    
       Yu, Bowen  and
+      
       Zhang, Zhenyu  and
+      
       Liu, Tingwen  and
+      
       Zhang, Yue  and
+      
       Wang, Bin",
+      
     booktitle = "Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP)",
+    
     year = "2020",
+    
     pages = "6345--6354",
+    
     }
