@@ -73,7 +73,7 @@ def args_parser():
 
     parser.add_argument("--pretrain", type=str, default=None)
     parser.add_argument("--regenerate_rate", type=float, default=0.1)
-    parser.add_argument("--STrain", type=int, default=1)
+    parser.add_argument("--STrain", type=int, default=0)
     parser.add_argument("--perepoch", type=int, default=0)
 
     args = parser.parse_args()
