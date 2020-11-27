@@ -55,7 +55,7 @@ def args_parser():
     parser.add_argument("--checkpoint", default=100, type=int)
     parser.add_argument("--learning_rate", default=5e-5, type=float)
     parser.add_argument("--num_train_epochs", default=5, type=int)
-    parser.add_argument("--warmup_proportion", default=0.1, type=float)
+    parser.add_argument("--warmup_proportion", default=-1, type=float)
     parser.add_argument("--local_rank", type=int, default=-1)
     parser.add_argument("--gradient_accumulation_steps", type=int, default=1)
     parser.add_argument("--seed", type=int, default=3006)
