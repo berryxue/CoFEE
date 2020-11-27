@@ -48,11 +48,11 @@ python -u run/train_bert_mrc.py --data_dir data/train_for_ESI/ecommerce/ --check
 
 ***Stage3: FET***
 
-python -u run/train_cluster_bert_mrc.py --data_dir data/train_for_ESI/ecommerce/pretrain/ --checkpoint 2000 --learning_rate 2e-5 --num_train_epochs 5 --output_dir data/saved_model/ecommerce/cluster/2e-5-5-23-0.001-sumpool-drop0.1-60 --data_sign ecommerce --pretrain data/saved_model/ecommerce/pretrain/ --bert_model data/bert_model/bert-base-chinese-pytorch/ --num_clusters 23 --gama 0.001 --clus_niter 60 --dropout_rate 0.1 
+python -u run/train_cluster_bert_mrc.py --data_dir data/train_for_ESI/ecommerce/pretrain/ --checkpoint 2000 --learning_rate 2e-5 --num_train_epochs 5 --output_dir data/saved_model/ecommerce/cluster/2e-5-5-23-0.001-sumpool-drop0.1-60 --data_sign ecommerce --pretrain data/saved_model/ecommerce/3e-5-6-regenerate0.1-perepoch0-warmup0.4 --bert_model data/bert_model/bert-base-chinese-pytorch/ --num_clusters 23 --gama 0.001 --clus_niter 60 --dropout_rate 0.1 
 
 ***Stage4: fine-tune***
 
-
+python -u run/train_bert_mrc.py --data_dir data/supervised_data/ecommerce/ --checkpoint 100 --learning_rate 3e-5 --num_train_epochs 25 --output_dir data/saved_model/ecommerce/supervised/3e-5-25 --data_sign ecommerce --pretrain data/saved_model/ecommerce/cluster/2e-5-5-23-0.001-sumpool-drop0.1-6 --bert_model data/bert_model/bert-base-chinese-pytorch/
 
 Cite: 
 ========
