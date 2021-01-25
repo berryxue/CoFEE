@@ -32,7 +32,7 @@ def args_parser():
     parser.add_argument("--bert_model", default="bert-base-chinese-pytorch/", type=str)
     parser.add_argument("--saved_model", type=str, default="saved_model/bert_finetune_model.bin")
     parser.add_argument("--max_seq_length", default=100, type=int)
-    parser.add_argument("--test_batch_size", default=32, type=int)
+    parser.add_argument("--test_batch_size", default=16, type=int)
     parser.add_argument("--data_sign", type=str, default="project")
     parser.add_argument("--entity_sign", type=str, default="flat")
     parser.add_argument("--n_gpu", type=int, default=1)
