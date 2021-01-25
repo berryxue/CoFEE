@@ -33,8 +33,7 @@ class BertTokenizer4Tagger(BertTokenizer):
     def __init__(self, vocab_file, do_lower_case=False, max_len=None, 
         never_split=("[UNK]", "[SEP]", "[PAD]", "[CLS]", "[MASK]")):
 
-        super(BertTokenizer4Tagger, self).__init__(vocab_file, do_lower_case=do_lower_case, 
-            max_len=max_len, never_split=never_split) 
+        super(BertTokenizer4Tagger, self).__init__(vocab_file, do_lower_case=do_lower_case, max_len=max_len, never_split=never_split) 
 
 
     def tokenize(self, text, label_lst=None):
