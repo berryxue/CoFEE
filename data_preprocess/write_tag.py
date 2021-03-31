@@ -1,3 +1,5 @@
+def ff(str,num):
+    return str[:num] + str[num+1:]
 def write_zh_tag(input_f, output_f):
     RE_link = re.compile(r'\[{2}(.*?)\]{2}', re.UNICODE)
     RE_link_single = re.compile(r'\[{1}(.*?)\]{1}', re.UNICODE)
